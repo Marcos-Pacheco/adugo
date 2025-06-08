@@ -22,9 +22,9 @@ Adugo é um jogo assimétrico para dois jogadores, com condições de vitória d
 </table>
 
 **Regras**:
-1. Onça é a única peça que pode capturar. O faz saltando sobre cães (como damas)
-2. Peças movem-se um espaço por turno
-3. O jogo acaba quando um dos jogadores atingir sua condição de vitória
+1. Onça é a única peça que pode capturar. Ação é feita saltando sobre cães (como em damas);
+2. Peças movem-se um espaço por turno;
+3. O jogo acaba quando um dos jogadores atingir sua condição de vitória;
 4. A primeira jogada é sempre da onça.
 
 **‼️ ESTE PROJETO AINDA ESTÁ EM DESENVOLVIMENTO ‼️**
