@@ -43,8 +43,7 @@ extends Node2D
 const LARGURA_CELULA = 4 #?
 
 # Scenes
-const CACHORRO = preload("res://Scenes/Cachorro.tscn")
-const ONCA = preload("res://Scenes/Onca.tscn")
+const PECA_SCENE = preload("res://Scenes/Peca.tscn")
 
 # Nodes
 @onready var board_node = $Board
@@ -68,21 +67,21 @@ func _ready():
 
 func preparar_tabuleiro() -> void:
 	var pecas : Array = [
-		Peca.new('CACHORRO_01','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_02','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_03','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_04','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_05','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_06','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_07','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_08','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_09','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_10','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_11','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_12','CACHORRO',CACHORRO),
-		Peca.new('ONCA_01','ONÇA',ONCA),
-		Peca.new('CACHORRO_13','CACHORRO',CACHORRO),
-		Peca.new('CACHORRO_14','CACHORRO',CACHORRO),
+		Peca.new('cachorro_01','cachorro',PECA_SCENE),
+		Peca.new('cachorro_02','cachorro',PECA_SCENE),
+		Peca.new('cachorro_03','cachorro',PECA_SCENE),
+		Peca.new('cachorro_04','cachorro',PECA_SCENE),
+		Peca.new('cachorro_05','cachorro',PECA_SCENE),
+		Peca.new('cachorro_06','cachorro',PECA_SCENE),
+		Peca.new('cachorro_07','cachorro',PECA_SCENE),
+		Peca.new('cachorro_08','cachorro',PECA_SCENE),
+		Peca.new('cachorro_09','cachorro',PECA_SCENE),
+		Peca.new('cachorro_10','cachorro',PECA_SCENE),
+		Peca.new('cachorro_11','cachorro',PECA_SCENE),
+		Peca.new('cachorro_12','cachorro',PECA_SCENE),
+		Peca.new('onca_01','onca',PECA_SCENE),
+		Peca.new('cachorro_13','cachorro',PECA_SCENE),
+		Peca.new('cachorro_14','cachorro',PECA_SCENE),
 	]
 
 	# funciona pois há mais espaços que peças
@@ -91,7 +90,7 @@ func preparar_tabuleiro() -> void:
 			break
 		if espaco.get('id') == 'C3':
 			for key in range(pecas.size()):
-				if pecas[key].get('tipo') == 'ONÇA':
+				if pecas[key].get('tipo') == 'onca':
 					espaco.peca = pecas[key]
 					espaco.peca.posicao = espaco.posicao
 					pecas.remove_at(key)
@@ -108,7 +107,8 @@ func mostrar_tabuleiro():
 			peca.global_position = espaco.posicao
 			board_node.add_child(peca)
 			
-			peca.call_deferred("initialize")
+			# inicia as animaçoes de peça
+			peca.initialize(espaco.peca.tipo)
 
 func jogar():
 	pass
