@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds0ntleuck5fb"]
+
+[ext_resource type="Texture2D" uid="uid://dqfyd76dvy0qm" path="res://Assets/adugo_board.png" id="1_ml4tp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-36, -49)
+texture = ExtResource("1_ml4tp")
+offset = Vector2(36, 49)
+
+[node name="A1" type="Marker2D" parent="."]
+position = Vector2(53, -35)
+gizmo_extents = 17.0
+
+[node name="A2" type="Marker2D" parent="."]
+position = Vector2(53, -18)
+gizmo_extents = 17.0
+
+[node name="A3" type="Marker2D" parent="."]
+position = Vector2(53, 0)
+gizmo_extents = 17.0
+
+[node name="A4" type="Marker2D" parent="."]
+position = Vector2(53, 18)
+gizmo_extents = 17.0
+
+[node name="A5" type="Marker2D" parent="."]
+position = Vector2(53, 35)
+gizmo_extents = 17.0
+
+[node name="B1" type="Marker2D" parent="."]
+position = Vector2(36, -35)
+gizmo_extents = 17.0
+
+[node name="B2" type="Marker2D" parent="."]
+position = Vector2(36, -18)
+gizmo_extents = 17.0
+
+[node name="B3" type="Marker2D" parent="."]
+position = Vector2(36, 0)
+gizmo_extents = 17.0
+
+[node name="B4" type="Marker2D" parent="."]
+position = Vector2(36, 18)
+gizmo_extents = 17.0
+
+[node name="B5" type="Marker2D" parent="."]
+position = Vector2(36, 35)
+gizmo_extents = 17.0
+
+[node name="C1" type="Marker2D" parent="."]
+position = Vector2(18, -35)
+gizmo_extents = 17.0
+
+[node name="C2" type="Marker2D" parent="."]
+position = Vector2(18, -18)
+gizmo_extents = 17.0
+
+[node name="C3" type="Marker2D" parent="."]
+position = Vector2(18, 0)
+gizmo_extents = 17.0
+
+[node name="C4" type="Marker2D" parent="."]
+position = Vector2(18, 18)
+gizmo_extents = 17.0
+
+[node name="C5" type="Marker2D" parent="."]
+position = Vector2(18, 35)
+gizmo_extents = 17.0
+
+[node name="D1" type="Marker2D" parent="."]
+position = Vector2(0, -35)
+gizmo_extents = 17.0
+
+[node name="D2" type="Marker2D" parent="."]
+position = Vector2(0, -18)
+gizmo_extents = 17.0
+
+[node name="D3" type="Marker2D" parent="."]
+gizmo_extents = 17.0
+
+[node name="D4" type="Marker2D" parent="."]
+position = Vector2(0, 18)
+gizmo_extents = 17.0
+
+[node name="D5" type="Marker2D" parent="."]
+position = Vector2(0, 35)
+gizmo_extents = 17.0
+
+[node name="E1" type="Marker2D" parent="."]
+position = Vector2(-17, -35)
+gizmo_extents = 17.0
+
+[node name="E2" type="Marker2D" parent="."]
+position = Vector2(-17, -18)
+gizmo_extents = 17.0
+
+[node name="E3" type="Marker2D" parent="."]
+position = Vector2(-17, 0)
+gizmo_extents = 17.0
+
+[node name="E4" type="Marker2D" parent="."]
+position = Vector2(-17, 18)
+gizmo_extents = 17.0
+
+[node name="E5" type="Marker2D" parent="."]
+position = Vector2(-17, 35)
+gizmo_extents = 17.0
+
+[node name="F1" type="Marker2D" parent="."]
+position = Vector2(-35, -17)
+gizmo_extents = 17.0
+
+[node name="F2" type="Marker2D" parent="."]
+position = Vector2(-35, 0)
+gizmo_extents = 17.0
+
+[node name="F3" type="Marker2D" parent="."]
+position = Vector2(-35, 17)
+gizmo_extents = 17.0
+
+[node name="G1" type="Marker2D" parent="."]
+position = Vector2(-53, -35)
+gizmo_extents = 17.0
+
+[node name="G2" type="Marker2D" parent="."]
+position = Vector2(-53, 0)
+gizmo_extents = 17.0
+
+[node name="G3" type="Marker2D" parent="."]
+position = Vector2(-53, 35)
+gizmo_extents = 17.0
