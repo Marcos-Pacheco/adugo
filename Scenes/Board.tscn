@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds0ntleuck5fb"]
+[gd_scene load_steps=3 format=3 uid="uid://ds0ntleuck5fb"]
 
 [ext_resource type="Texture2D" uid="uid://dqfyd76dvy0qm" path="res://Assets/adugo_board.png" id="1_ml4tp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ml4tp"]
+radius = 6.08276
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,121 +16,276 @@ offset = Vector2(36, 49)
 position = Vector2(53, -35)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="A1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A1/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="A2" type="Marker2D" parent="."]
 position = Vector2(53, -18)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="A2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A2/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="A3" type="Marker2D" parent="."]
 position = Vector2(53, 0)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="A3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A3/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="A4" type="Marker2D" parent="."]
 position = Vector2(53, 18)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="A4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A4/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="A5" type="Marker2D" parent="."]
 position = Vector2(53, 35)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="A5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A5/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="B1" type="Marker2D" parent="."]
 position = Vector2(36, -35)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="B1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B1/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="B2" type="Marker2D" parent="."]
 position = Vector2(36, -18)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="B2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B2/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="B3" type="Marker2D" parent="."]
 position = Vector2(36, 0)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="B3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B3/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="B4" type="Marker2D" parent="."]
 position = Vector2(36, 18)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="B4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B4/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="B5" type="Marker2D" parent="."]
 position = Vector2(36, 35)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="B5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B5/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="C1" type="Marker2D" parent="."]
 position = Vector2(18, -35)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="C1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C1/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="C2" type="Marker2D" parent="."]
 position = Vector2(18, -18)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="C2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C2/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="C3" type="Marker2D" parent="."]
 position = Vector2(18, 0)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="C3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C3/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="C4" type="Marker2D" parent="."]
 position = Vector2(18, 18)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="C4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C4/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="C5" type="Marker2D" parent="."]
 position = Vector2(18, 35)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="C5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C5/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="D1" type="Marker2D" parent="."]
 position = Vector2(0, -35)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="D1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D1/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="D2" type="Marker2D" parent="."]
 position = Vector2(0, -18)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D2/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="D3" type="Marker2D" parent="."]
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="D3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D3/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="D4" type="Marker2D" parent="."]
 position = Vector2(0, 18)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="D4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D4/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="D5" type="Marker2D" parent="."]
 position = Vector2(0, 35)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="D5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D5/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="E1" type="Marker2D" parent="."]
 position = Vector2(-17, -35)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="E1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="E1/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="E2" type="Marker2D" parent="."]
 position = Vector2(-17, -18)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="E2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="E2/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="E3" type="Marker2D" parent="."]
 position = Vector2(-17, 0)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="E3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="E3/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="E4" type="Marker2D" parent="."]
 position = Vector2(-17, 18)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="E4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="E4/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="E5" type="Marker2D" parent="."]
 position = Vector2(-17, 35)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="E5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="E5/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="F1" type="Marker2D" parent="."]
 position = Vector2(-35, -17)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="F1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="F1/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="F2" type="Marker2D" parent="."]
 position = Vector2(-35, 0)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="F2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="F2/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="F3" type="Marker2D" parent="."]
 position = Vector2(-35, 17)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="F3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="F3/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
 
 [node name="G1" type="Marker2D" parent="."]
 position = Vector2(-53, -35)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="G1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="G1/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="G2" type="Marker2D" parent="."]
 position = Vector2(-53, 0)
 gizmo_extents = 17.0
 
+[node name="Area2D" type="Area2D" parent="G2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="G2/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")
+
 [node name="G3" type="Marker2D" parent="."]
 position = Vector2(-53, 35)
 gizmo_extents = 17.0
+
+[node name="Area2D" type="Area2D" parent="G3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="G3/Area2D"]
+shape = SubResource("CircleShape2D_ml4tp")

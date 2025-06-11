@@ -52,10 +52,10 @@ const PECA_SCENE = preload("res://Scenes/Peca.tscn")
 
 # Vars
 var tabuleiro:Tabuleiro
-var turno:bool
+var turno:String # tipo da peça da vez; onca ou cachorros
 var estado:bool
 var movimentacoes:Array
-var peca_selecionada:Vector2
+var peca_selecionada:Peca
 
 # vazio = null; onca = 0; cachorro > 0
 
@@ -64,6 +64,7 @@ func _ready():
 	tabuleiro = Tabuleiro.new(MARKERS)
 	preparar_tabuleiro()
 	mostrar_tabuleiro()
+	jogar()
 
 func preparar_tabuleiro() -> void:
 	var pecas : Array = [
@@ -100,15 +101,25 @@ func preparar_tabuleiro() -> void:
 			espaco.peca.posicao = espaco.posicao
 			pecas.remove_at(0)
 
-func mostrar_tabuleiro():
+func mostrar_tabuleiro() -> void:
 	for espaco in tabuleiro.get('espacos'):
 		if espaco.peca != null:
 			var peca = espaco.peca.scene.instantiate()
 			peca.global_position = espaco.posicao
 			board_node.add_child(peca)
 			
+			# conecta o sinal da nova cena instaciada ao _on_peca_selecionada
+			peca.is_selected.connect(_on_peca_selecionada)
+			
 			# inicia as animaçoes de peça
-			peca.initialize(espaco.peca.tipo)
+			# nao confundir comportamento/peca com classes/peca
+			peca.initialize(espaco.peca)
 
-func jogar():
+func jogar() -> void:
+	pass
+
+func _on_peca_selecionada(peca:Peca) -> void:
+	self.peca_selecionada = peca
+
+func _on_espaco_selecionado() -> void:
 	pass
