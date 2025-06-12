@@ -1,67 +1,25 @@
 extends Node2D
 
-@onready var MARKERS : Dictionary[String, Marker2D] = {
-	'A1': $Board/A1,
-	'A2': $Board/A2,
-	'A3': $Board/A3,
-	'A4': $Board/A4,
-	'A5': $Board/A5,
-	
-	'B1': $Board/B1,
-	'B2': $Board/B2,
-	'B3': $Board/B3,
-	'B4': $Board/B4,
-	'B5': $Board/B5,
-	
-	'C1': $Board/C1,
-	'C2': $Board/C2,
-	'C3': $Board/C3,
-	'C4': $Board/C4,
-	'C5': $Board/C5,
-	
-	'D1': $Board/D1,
-	'D2': $Board/D2,
-	'D3': $Board/D3,
-	'D4': $Board/D4,
-	'D5': $Board/D5,
-	
-	'E1': $Board/E1,
-	'E2': $Board/E2,
-	'E3': $Board/E3,
-	'E4': $Board/E4,
-	'E5': $Board/E5,
-	
-	'F1': $Board/F1,
-	'F2': $Board/F2,
-	'F3': $Board/F3,
-	
-	'G1': $Board/G1,
-	'G2': $Board/G2,
-	'G3': $Board/G3,
-}
-
 const LARGURA_CELULA = 4 #?
 
 # Scenes
 const PECA_SCENE = preload("res://Scenes/Peca.tscn")
 
 # Nodes
-@onready var board_node = $Board
-@onready var possibilidadesNode = $possibilidades
-@onready var turnoNode = $turno
+@onready var tabuleiro = $Tabuleiro
 
 # Vars
-var tabuleiro:Tabuleiro
 var turno:String # tipo da peça da vez; onca ou cachorros
 var estado:bool
 var movimentacoes:Array
-var peca_selecionada:Peca
+var peca_selecionada: Peca
+var espaco_selecionado: EspacoTabuleiro
 
 # vazio = null; onca = 0; cachorro > 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	tabuleiro = Tabuleiro.new(MARKERS)
+	turno = 'onca'
 	preparar_tabuleiro()
 	mostrar_tabuleiro()
 	jogar()
@@ -86,7 +44,7 @@ func preparar_tabuleiro() -> void:
 	]
 
 	# funciona pois há mais espaços que peças
-	for espaco in tabuleiro.get('espacos'):
+	for espaco in self.tabuleiro.get('espacos'):
 		if pecas.size() == 0:
 			break
 		if espaco.get('id') == 'C3':
@@ -102,11 +60,13 @@ func preparar_tabuleiro() -> void:
 			pecas.remove_at(0)
 
 func mostrar_tabuleiro() -> void:
-	for espaco in tabuleiro.get('espacos'):
+	self.tabuleiro.is_selected.connect(_on_espaco_selecionado)
+	for espaco in self.tabuleiro.get('espacos'):
 		if espaco.peca != null:
 			var peca = espaco.peca.scene.instantiate()
+			peca.name = espaco.peca.id
 			peca.global_position = espaco.posicao
-			board_node.add_child(peca)
+			tabuleiro.add_child(peca)
 			
 			# conecta o sinal da nova cena instaciada ao _on_peca_selecionada
 			peca.is_selected.connect(_on_peca_selecionada)
@@ -114,12 +74,31 @@ func mostrar_tabuleiro() -> void:
 			# inicia as animaçoes de peça
 			# nao confundir comportamento/peca com classes/peca
 			peca.initialize(espaco.peca)
-
-func jogar() -> void:
 	pass
 
 func _on_peca_selecionada(peca:Peca) -> void:
 	self.peca_selecionada = peca
+	print('Peca: ' + peca.id)
+	self.jogar()
 
-func _on_espaco_selecionado() -> void:
-	pass
+func _on_espaco_selecionado(espaco:EspacoTabuleiro) -> void:
+	self.espaco_selecionado = espaco
+	print('Espaço: ' + espaco.id)
+	self.jogar()
+
+func jogar() -> void:
+	#print(self.peca_selecionada and self.espaco_selecionado)
+	if self.peca_selecionada and self.espaco_selecionado:
+		for node in tabuleiro.get_children():
+			if self.peca_selecionada.id == node.name:
+				var tween = create_tween()
+				tween.tween_property(node,'position',self.espaco_selecionado.posicao,1)
+			
+		#print(tabuleiro.get_children())
+		#self.peca_selecionada.scene.position = self.espaco_selecionado.posicao
+	#if self.turno == self.peca_selecionada.tipo:
+		#print('Peça correta')
+		#if self.espaco_selecionado.
+	#else:
+		#print('Peça errada')
+		

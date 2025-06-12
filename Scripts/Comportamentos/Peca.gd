@@ -41,10 +41,10 @@ func _on_mouse_entered():
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		emit_signal('is_selected',self.peca)
 		if self.selected == 0:
 			play_selected()
 			self.selected = 1
-			emit_signal('is_selected',self.peca)
 		else:
 			play_hover()
 			self.selected = 0

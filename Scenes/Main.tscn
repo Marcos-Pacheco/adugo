@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4nu3itnh2h4"]
 
 [ext_resource type="Script" uid="uid://c75l3fxns05k3" path="res://Scripts/Main.gd" id="1_idj7w"]
-[ext_resource type="PackedScene" uid="uid://ds0ntleuck5fb" path="res://Scenes/Board.tscn" id="2_kln2b"]
+[ext_resource type="PackedScene" uid="uid://ds0ntleuck5fb" path="res://Scenes/Tabuleiro.tscn" id="2_kln2b"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_idj7w")
 
-[node name="Board" parent="." instance=ExtResource("2_kln2b")]
+[node name="Tabuleiro" parent="." instance=ExtResource("2_kln2b")]
 position = Vector2(80, 45)
